@@ -139,18 +139,6 @@ footer a{color:var(--cor-primaria);text-decoration:underline}
 .text-center{text-align:center}.mt-32{margin-top:32px}.mt-24{margin-top:24px}
 @media(max-width:640px){.secao{padding:48px 16px}.hero{padding:44px 16px 32px}.como-funciona-img{max-width:100%;border-radius:8px}.bonus-grid{grid-template-columns:1fr;gap:16px}.bonus-grid img{width:100%}}
 
-.exit-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
-.exit-overlay.ativo{display:flex}
-.exit-modal{background:var(--branco);border-radius:16px;max-width:420px;width:100%;padding:36px 28px 28px;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-.exit-close{position:absolute;top:10px;right:14px;font-size:24px;color:var(--cinza-texto);cursor:pointer;background:none;border:none;line-height:1}
-.exit-modal h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:var(--preto);margin-bottom:10px}
-.exit-modal p{font-size:14px;color:var(--cinza-texto);margin-bottom:18px;line-height:1.6}
-.exit-precos{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:18px}
-.exit-precos .de{font-size:16px;color:var(--cinza-texto);text-decoration:line-through}
-.exit-precos .por{font-size:34px;font-weight:900;color:var(--cor-primaria);font-family:'Montserrat',sans-serif}
-.exit-btn{display:inline-block;background:var(--cor-primaria);color:var(--branco);font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;padding:16px 28px;border-radius:8px;width:100%;max-width:100%;text-align:center;transition:background 0.15s}
-.exit-btn:hover{background:var(--cor-primaria-hover)}
-.exit-recusar{display:block;margin:14px auto 0;font-size:12px;color:var(--cinza-texto);text-decoration:underline;cursor:pointer;background:none;border:none}
 
 .objecoes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
 @media(max-width:768px){.objecoes-grid{grid-template-columns:1fr}}
@@ -451,35 +439,7 @@ window.onload=()=>{document.querySelectorAll("a").forEach(link=>{if(link.href&&l
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=28152688191049877&ev=PageView&noscript=1"/></noscript>
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
-<div class="exit-overlay" id="exit-overlay">
-  <div class="exit-modal">
-    <button class="exit-close" onclick="fecharExitPopup()">&times;</button>
-    <h3>Espera! Antes de sair...</h3>
-    <p>Ganhe um desconto exclusivo se garantir seu pacote agora:</p>
-    <div class="exit-precos"><span class="de">R$37,90</span><span class="por">R$27,90</span></div>
-    <a href="https://app.mivvo.com.br/checkout/01a0e2f9-35b1-75de-b9b9-7f6c61cc8817" class="exit-btn">Sim, quero o desconto!</a>
-    <button class="exit-recusar" onclick="fecharExitPopup()">Não, vou perder a oferta</button>
-  </div>
-</div>
 
-<script>
-(function(){
-  var shown=false;
-  function abrir(){
-    if(shown) return;
-    if(sessionStorage.getItem('exitPopupShown')) return;
-    shown=true;
-    sessionStorage.setItem('exitPopupShown','1');
-    var ov=document.getElementById('exit-overlay');
-    if(ov) ov.classList.add('ativo');
-  }
-  document.addEventListener('mouseout',function(e){
-    if(!e.relatedTarget && e.clientY<10) abrir();
-  });
-  setTimeout(abrir, 45000);
-})();
-function fecharExitPopup(){var ov=document.getElementById('exit-overlay');if(ov)ov.classList.remove('ativo');}
-</script>
 <script>
 function toggleBonusNovo(el){
   var item = el.closest('.bonus-item-novo');
@@ -495,5 +455,88 @@ function toggleBonusNovo(el){
   }
 }
 </script>
+<!-- EXIT-POPUP:START -->
+<style>
+.xp-ov{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.xp-ov.xp-on{display:flex;animation:xp-fade .2s ease-out}
+.xp-box{position:relative;width:100%;max-width:440px;max-height:calc(100vh - 32px);overflow:auto;background:#ffffff;color:#111827;border:1px solid #E5E7EB;border-radius:18px;padding:30px 24px 22px;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.45);font-family:'Inter',system-ui,sans-serif;animation:xp-pop .25s ease-out}
+.xp-x{position:absolute;top:8px;right:10px;width:36px;height:36px;border:0;background:none;color:#6B7280;font-size:26px;line-height:1;cursor:pointer;border-radius:8px}
+.xp-x:hover{color:#111827}
+.xp-tag{display:inline-block;background:var(--cor-primaria);color:#ffffff;font-family:'Montserrat',system-ui,sans-serif;font-weight:800;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.xp-tt{font-family:'Montserrat',system-ui,sans-serif;font-weight:900;font-size:clamp(22px,6vw,27px);line-height:1.15;margin:0 0 8px;color:#111827}
+.xp-sub{font-size:14.5px;line-height:1.45;color:#6B7280;margin:0 0 16px}
+.xp-list{list-style:none;margin:0 0 16px;padding:0;text-align:left;display:grid;gap:8px}
+.xp-list li{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--cor-primaria);border-radius:12px;background:var(--cor-primaria-clara);font-weight:700;font-size:14.5px;color:#111827}
+.xp-list b{font-size:22px;line-height:1}
+.xp-list em{margin-left:auto;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--cor-primaria);white-space:nowrap}
+.xp-cta{display:block;background:var(--cor-primaria);color:#ffffff!important;font-family:'Montserrat',system-ui,sans-serif;font-weight:800;font-size:15px;line-height:1.25;padding:17px 18px;border-radius:12px;text-decoration:none;transition:filter .15s,transform .15s}
+.xp-cta:hover{filter:brightness(0.88);transform:translateY(-2px)}
+.xp-no{margin-top:12px;background:none;border:0;color:#6B7280;font-size:12.5px;text-decoration:underline;cursor:pointer}
+.xp-safe{margin:12px 0 0;font-size:11.5px;color:#6B7280}
+@keyframes xp-fade{from{opacity:0}to{opacity:1}}
+@keyframes xp-pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:380px){.xp-list li{font-size:13.5px;padding:10px 11px}.xp-list em{display:none}}
+@media(prefers-reduced-motion:reduce){.xp-ov.xp-on,.xp-box{animation:none}}
+</style>
+<div class="xp-ov" id="xp-ov" role="dialog" aria-modal="true" aria-labelledby="xp-tt" aria-hidden="true">
+  <div class="xp-box">
+    <button type="button" class="xp-x" id="xp-x" aria-label="Fechar">&times;</button>
+    <span class="xp-tag">🎁 Presente antes de você ir</span>
+    <h2 class="xp-tt" id="xp-tt">Espere! Leve mais 3 bônus de presente</h2>
+    <p class="xp-sub">Garanta o <strong>Pacote Completo</strong> agora e receba também, sem pagar nada a mais:</p>
+    <ul class="xp-list">
+      <li><b>🧮</b>Calculadora de Preços e Lucro<em>Grátis</em></li>
+      <li><b>👥</b>Controle de Clientes e Retornos<em>Grátis</em></li>
+      <li><b>📄</b>Gerador de Orçamentos<em>Grátis</em></li>
+    </ul>
+    <a href="https://app.mivvo.com.br/checkout/d77c90e9-4bd0-4007-8e08-fd301d30e207" class="xp-cta" id="xp-cta">SIM! QUERO O PACOTE COMPLETO + OS 3 BÔNUS</a>
+    <button type="button" class="xp-no" id="xp-no">Não, obrigado</button>
+    <p class="xp-safe">✅ Compra 100% segura &nbsp;•&nbsp; 7 dias de garantia</p>
+  </div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById('xp-ov'); if(!ov) return;
+  var KEY='xp_exit_shown', armed=false, shown=false, lastFocus=null;
+  try{ if(sessionStorage.getItem(KEY)) shown=true; }catch(e){}
+  var touch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
+  function open(){
+    if(shown) return; shown=true;
+    try{ sessionStorage.setItem(KEY,'1'); }catch(e){}
+    lastFocus=document.activeElement;
+    ov.classList.add('xp-on'); ov.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    var b=document.getElementById('xp-cta'); if(b) b.focus({preventScroll:true});
+  }
+  function close(){
+    ov.classList.remove('xp-on'); ov.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow='';
+    if(lastFocus&&lastFocus.focus) try{lastFocus.focus({preventScroll:true});}catch(e){}
+  }
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  document.getElementById('xp-x').addEventListener('click',close);
+  document.getElementById('xp-no').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('xp-on')) close(); });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="/checkout/"]');
+    if(a) shown=true;
+  },true);
+  setTimeout(function(){
+    armed=true;
+    if(touch&&!shown){
+      try{
+        history.pushState({xp:1},'',location.href);
+        window.addEventListener('popstate',function(){
+          if(!shown){ open(); try{history.pushState({xp:1},'',location.href);}catch(e){} }
+        });
+      }catch(e){}
+    }
+  },8000);
+  document.addEventListener('mouseout',function(e){
+    if(armed&&!touch&&!e.relatedTarget&&e.clientY<=0) open();
+  });
+})();
+</script>
+<!-- EXIT-POPUP:END -->
 </body>
 </html>
