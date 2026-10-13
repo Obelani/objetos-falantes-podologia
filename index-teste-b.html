@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pacote de Vídeos Prontos para Podologia | Objetos Falantes</title>
+<meta name="description" content="Vídeos prontos para divulgar sua podologia nas redes sociais, sem precisar aparecer ou gravar. A partir de R$10, pagamento único.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cor-primaria:#059669;--cor-primaria-hover:#047857;--cor-primaria-clara:#ECFDF5;--cor-primaria-media:#D1FAE5;
+  --preto:#111827;--cinza-texto:#6B7280;--cinza-fundo:#F9FAFB;--branco:#FFFFFF;--borda:#E5E7EB;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--branco);color:var(--preto);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{max-width:760px;margin:0 auto;padding:0 20px}
+.secao{padding:48px 0}
+.secao-titulo{font-size:clamp(20px,4vw,28px);font-weight:900;text-align:center;margin-bottom:8px}
+.secao-sub{text-align:center;color:var(--cinza-texto);font-size:14.5px;margin-bottom:28px}
+.destaque{color:var(--cor-primaria)}
+.bg-cinza{background:var(--cinza-fundo)}
+.btn{display:inline-block;background:var(--cor-primaria);color:var(--branco);font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;padding:16px 28px;border-radius:10px;text-align:center;border:none;cursor:pointer;width:100%;max-width:420px;transition:background .15s,transform .15s}
+.btn:hover{background:var(--cor-primaria-hover);transform:translateY(-1px)}
+.btn-ghost{display:inline-block;background:var(--branco);color:var(--cor-primaria);border:2px solid var(--cor-primaria);font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;padding:13px 24px;border-radius:10px;text-align:center}
+.center{text-align:center}
+.mt{margin-top:28px}
+/* HERO */
+.hero{padding:28px 0 20px}
+.hero .badge{display:inline-block;background:var(--cor-primaria-clara);color:var(--cor-primaria-hover);font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:clamp(24px,5vw,36px);font-weight:900;margin-bottom:12px}
+.hero p{color:var(--cinza-texto);font-size:15px;margin-bottom:20px;max-width:560px}
+.hero-video{max-width:280px;margin:0 auto 20px;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:9/16;position:relative;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.hero-video video{width:100%;height:100%;object-fit:cover;display:block}
+.preco-linha{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--cor-primaria);margin-bottom:14px}
+.hero-rodape{font-size:12px;color:var(--cinza-texto);margin-top:12px}
+/* DEMO GRID */
+.demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:620px){.demo-grid{grid-template-columns:1fr;max-width:280px;margin:0 auto}}
+.demo-card{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.demo-card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.demo-legenda{background:var(--branco);padding:12px 14px;border:1px solid var(--borda);border-top:0;border-radius:0 0 14px 14px}
+.demo-legenda strong{display:block;font-size:13.5px;margin-bottom:2px}
+.demo-legenda span{font-size:12.5px;color:var(--cinza-texto)}
+/* PASSOS */
+.passos{display:flex;flex-direction:column;gap:16px;max-width:520px;margin:0 auto}
+.passo{display:flex;gap:14px;align-items:flex-start;background:var(--branco);border:1px solid var(--borda);border-radius:12px;padding:16px}
+.passo-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--cor-primaria);color:var(--branco);font-family:'Montserrat',sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.passo h4{font-size:14.5px;margin-bottom:2px}
+.passo p{font-size:13px;color:var(--cinza-texto)}
+/* PLANOS */
+.planos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:620px){.planos-grid{grid-template-columns:1fr}}
+.plano{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;position:relative}
+.plano.completo{border:2px solid var(--cor-primaria)}
+.plano-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cor-primaria);color:var(--branco);font-family:'Montserrat',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;padding:4px 14px;border-radius:999px;white-space:nowrap}
+.plano h3{font-size:16px}
+.plano ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13.5px}
+.plano ul li{display:flex;gap:8px;align-items:flex-start}
+.plano ul li::before{content:'✓';color:var(--cor-primaria);font-weight:800;flex-shrink:0}
+.plano-preco{font-family:'Montserrat',sans-serif;font-weight:900;font-size:38px;color:var(--cor-primaria);line-height:1}
+.plano-preco-tipo{font-size:11.5px;color:var(--cinza-texto)}
+.condicoes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.condicoes span{background:var(--cor-primaria-clara);color:var(--cor-primaria-hover);font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px}
+/* BONUS */
+.bonus-grupo{margin-bottom:22px}
+.bonus-grupo h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--cor-primaria);margin-bottom:10px;font-weight:800}
+.bonus-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--borda)}
+.bonus-item:first-child{border-top:0}
+.bonus-item img{width:56px;height:56px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.bonus-item h5{font-size:13.5px;margin-bottom:2px}
+.bonus-item p{font-size:12.5px;color:var(--cinza-texto);line-height:1.5}
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--borda)}
+.faq-q{width:100%;text-align:left;background:none;border:0;padding:16px 4px;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
+.faq-r{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.faq-r p{padding:0 4px 16px;font-size:13.5px;color:var(--cinza-texto);line-height:1.6}
+.faq-item.aberto .faq-r{max-height:300px}
+.faq-item.aberto .faq-seta{transform:rotate(180deg)}
+.faq-seta{transition:transform .2s;color:var(--cor-primaria)}
+.garantia{display:flex;gap:14px;align-items:center;background:var(--cor-primaria-clara);border-radius:14px;padding:18px 20px;margin-bottom:28px}
+.garantia img{width:52px;flex-shrink:0}
+.garantia h3{font-size:14.5px;margin-bottom:3px}
+.garantia p{font-size:12.5px;color:var(--cinza-texto)}
+/* FINAL */
+.final{background:var(--preto);color:var(--branco);text-align:center}
+.final h2{color:var(--branco)}
+.final p{color:#D1D5DB;font-size:14px;max-width:520px;margin:0 auto 24px}
+.final-botoes{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto}
+footer{text-align:center;padding:24px 20px;font-size:11.5px;color:var(--cinza-texto)}
+footer a{text-decoration:underline}
+/* sticky mobile */
+.sticky-ver{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--preto);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:center}
+.sticky-ver.on{display:flex}
+.sticky-ver a{color:var(--branco);font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border:1px solid rgba(255,255,255,.3);border-radius:999px}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container center">
+    <span class="badge">Para Podólogas</span>
+    <h1>Vídeos prontos para divulgar a sua podologia, sem precisar aparecer ou gravar</h1>
+    <p class="center" style="margin-left:auto;margin-right:auto">Mascotes animados já editados, prontos pra postar no Instagram, TikTok e WhatsApp. Você baixa e publica — sem câmera, sem edição, sem precisar aparecer.</p>
+    <div class="hero-video">
+      <video src="video-demo-1.mp4" muted loop playsinline preload="metadata" controls controlsList="nodownload nofullscreen noplaybackrate noremoteplayback" oncontextmenu="return false;"></video>
+    </div>
+    <p class="preco-linha">Pacotes a partir de R$10 • pagamento único</p>
+    <a href="#planos" class="btn" id="cta-hero">VER PACOTES E PREÇOS</a>
+    <p class="hero-rodape">Acesso enviado por email e WhatsApp após a confirmação do pagamento • garantia de 7 dias</p>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="container">
+    <h2 class="secao-titulo">Veja o que você vai <span class="destaque">publicar</span></h2>
+    <p class="secao-sub">3 exemplos reais do pacote</p>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <video src="video-demo-1.mp4" muted loop playsinline preload="metadata" controls controlsList="nodownload nofullscreen noplaybackrate noremoteplayback" oncontextmenu="return false;"></video>
+        <div class="demo-legenda"><strong>🦶 Calo teimoso</strong><span>Se explicando por que insiste em voltar — e o que fazer sobre isso.</span></div>
+      </div>
+      <div class="demo-card">
+        <video src="video-demo-2.mp4" muted loop playsinline preload="metadata" controls controlsList="nodownload nofullscreen noplaybackrate noremoteplayback" oncontextmenu="return false;"></video>
+        <div class="demo-legenda"><strong>🧰 Kit esterilizado</strong><span>Mostrando o cuidado com a higiene do seu atendimento.</span></div>
+      </div>
+      <div class="demo-card">
+        <video src="video-demo-3.mp4" muted loop playsinline preload="metadata" controls controlsList="nodownload nofullscreen noplaybackrate noremoteplayback" oncontextmenu="return false;"></video>
+        <div class="demo-legenda"><strong>📸 Resultado</strong><span>Cliente mostrando os pés cuidados depois da sessão.</span></div>
+      </div>
+    </div>
+    <p class="center mt"><a href="#planos" class="btn-ghost">Ver pacotes e preços</a></p>
+  </div>
+</section>
+
+<section class="secao bg-cinza">
+  <div class="container">
+    <h2 class="secao-titulo">Como você <span class="destaque">recebe e usa</span></h2>
+    <div class="passos">
+      <div class="passo"><div class="passo-num">1</div><div><h4>Escolha seu pacote</h4><p>Básico (R$10) ou Completo (R$27,90) — os dois são pagamento único.</p></div></div>
+      <div class="passo"><div class="passo-num">2</div><div><h4>Receba o acesso</h4><p>Assim que o pagamento for confirmado, enviamos o link para o seu email e WhatsApp.</p></div></div>
+      <div class="passo"><div class="passo-num">3</div><div><h4>Baixe e publique</h4><p>Os vídeos já vêm prontos. Basta baixar o arquivo e postar direto nas suas redes.</p></div></div>
+    </div>
+    <p class="center hero-rodape mt" style="max-width:480px;margin-left:auto;margin-right:auto">Os vídeos não vêm com o seu nome, telefone ou logo adicionados automaticamente. Se quiser incluir isso, você precisa editar o arquivo antes de postar.</p>
+  </div>
+</section>
+
+<section class="secao" id="planos">
+  <div class="container">
+    <h2 class="secao-titulo">Escolha o seu <span class="destaque">pacote</span></h2>
+    <p class="secao-sub">Pagamento único nos dois planos, sem mensalidade</p>
+    <div class="planos-grid">
+      <div class="plano">
+        <h3>Básico</h3>
+        <ul>
+          <li>5 Vídeos de Objetos Falantes</li>
+          <li>10 Posts editáveis</li>
+          <li>5 Stories</li>
+          <li>10 Legendas prontas</li>
+        </ul>
+        <div><div class="plano-preco">R$10</div><div class="plano-preco-tipo">Pagamento único</div></div>
+        <a href="https://app.mivvo.com.br/checkout/01a11bf5-0ae1-7c48-9871-6f2b240386c5" class="btn" id="cta-basico" style="background:var(--preto)">COMPRAR BÁSICO — R$10</a>
+      </div>
+      <div class="plano completo">
+        <span class="plano-tag">Mais completo</span>
+        <h3>Completo</h3>
+        <ul>
+          <li>Tudo do Básico e mais</li>
+          <li>+50 Vídeos de Objetos Falantes</li>
+          <li>Destaques para Bio no Instagram</li>
+          <li>7 bônus (veja abaixo)</li>
+        </ul>
+        <div><div class="plano-preco">R$27,90</div><div class="plano-preco-tipo">Pagamento único</div></div>
+        <a href="https://app.mivvo.com.br/checkout/01a0e2f9-35b1-75de-b9b9-7f6c61cc8817" class="btn" id="cta-completo">COMPRAR COMPLETO — R$27,90</a>
+      </div>
+    </div>
+    <div class="condicoes">
+      <span>✅ Pagamento único</span>
+      <span>📧 Entrega por email e WhatsApp</span>
+      <span>🛡️ Garantia de 7 dias</span>
+      <span>💳 PIX ou cartão de crédito</span>
+    </div>
+  </div>
+</section>
+
+<section class="secao bg-cinza">
+  <div class="container">
+    <h2 class="secao-titulo">Bônus do <span class="destaque">Completo</span></h2>
+    <p class="secao-sub">Inclusos sem custo extra na compra do pacote Completo</p>
+
+    <div class="bonus-grupo">
+      <h4>Divulgar</h4>
+      <div class="bonus-item"><img src="bonus_novo_4.webp" alt="Método Post que Atrai Clientes"><div><h5>Método Post que Atrai Clientes</h5><p>Orientações para publicar com mais intenção: apresentar seu serviço e convidar a pessoa a entrar em contato.</p></div></div>
+      <div class="bonus-item"><img src="bonus_novo_5.webp" alt="Fórmula Instagram que Vende"><div><h5>Fórmula Instagram que Vende</h5><p>Material para organizar seu perfil e pensar publicações que expliquem o que você oferece.</p></div></div>
+    </div>
+
+    <div class="bonus-grupo">
+      <h4>Atender</h4>
+      <div class="bonus-item"><img src="bonus_novo_6.webp" alt="Protocolo de Atendimento"><div><h5>Protocolo de Atendimento</h5><p>Roteiro simples para conduzir a conversa desde a primeira mensagem até combinar o atendimento.</p></div></div>
+      <div class="bonus-item"><img src="bonus_novo_7.webp" alt="Biblioteca de Respostas para WhatsApp"><div><h5>Biblioteca de Respostas para WhatsApp</h5><p>Modelos de mensagens prontos para dúvidas, pedidos de preço e contatos sem resposta. É possível adaptar o texto ao seu jeito de atender.</p></div></div>
+    </div>
+
+    <div class="bonus-grupo">
+      <h4>Organizar</h4>
+      <div class="bonus-item"><img src="bonus_novo_1.webp" alt="Calculadora de Preços e Lucro"><div><h5>Calculadora de Preços e Lucro</h5><p>Planilha para informar materiais, tempo de trabalho e valor da hora, e ver o preço sugerido e o lucro estimado.</p></div></div>
+      <div class="bonus-item"><img src="bonus_novo_2.webp" alt="Controle de Clientes e Retornos"><div><h5>Controle de Clientes e Retornos</h5><p>Planilha para registrar quem entrou em contato e acompanhar quem precisa de retorno.</p></div></div>
+      <div class="bonus-item"><img src="bonus_novo_3.webp" alt="Gerador de Orçamentos"><div><h5>Gerador de Orçamentos</h5><p>Guia em PDF com passo a passo, com acesso a um gerador online gratuito e externo. O PDF gerado por essa ferramenta externa pode conter marca d'água.</p></div></div>
+    </div>
+
+    <p class="center mt"><a href="https://app.mivvo.com.br/checkout/01a0e2f9-35b1-75de-b9b9-7f6c61cc8817" class="btn" style="max-width:380px" id="cta-bonus">COMPRAR COMPLETO — R$27,90</a></p>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="container">
+    <h2 class="secao-titulo">Garantia e <span class="destaque">dúvidas</span></h2>
+    <div class="garantia">
+      <img src="Garantia.webp" alt="Garantia de 7 dias">
+      <div><h3>7 dias de garantia incondicional</h3><p>Se não ficar satisfeita, é só enviar um email pedindo o reembolso. Devolvemos 100% do valor pago.</p></div>
+    </div>
+    <div class="faq-lista">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Os vídeos já vêm prontos?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Sim. Não é preciso gravar, filmar ou editar nada — é só baixar o vídeo e publicar.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Posso baixar e publicar pelo celular?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Sim. O acesso chega por email e WhatsApp, e os vídeos podem ser baixados e postados direto do celular, sem instalar nada além dos aplicativos das redes sociais.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Preciso de algum aplicativo?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Não para usar os vídeos como estão. Só é necessário o aplicativo da rede social onde for postar (Instagram, TikTok ou WhatsApp).</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Posso colocar minha marca? Como?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Os vídeos chegam prontos, sem seu nome, telefone ou logo adicionados. Se quiser incluir essas informações, é preciso editar o arquivo em um aplicativo de edição antes de postar — isso não vem incluído no pacote.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Quais exemplos fazem parte do Básico?<span class="faq-seta">▾</span></button><div class="faq-r"><p>O Básico inclui 5 vídeos de objetos falantes, 10 posts editáveis, 5 stories e 10 legendas prontas — uma amostra menor do mesmo conteúdo do pacote Completo.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Como recebo o acesso?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Assim que o pagamento for confirmado, enviamos o acesso para o email e o WhatsApp informados na compra.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Existe mensalidade?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Não. O pagamento é único nos dois planos, sem cobrança recorrente.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Funciona em qualquer cidade?<span class="faq-seta">▾</span></button><div class="faq-r"><p>Os vídeos podem ser usados por podólogas de qualquer cidade, já que não citam uma localização específica. Isso não garante alcance automático na sua região — para aparecer para pessoas perto de você, vale usar localização e stories, ou combinar com anúncios pagos direcionados.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre os planos?<span class="faq-seta">▾</span></button><div class="faq-r"><p>O Básico tem 5 vídeos, 10 posts, 5 stories e 10 legendas. O Completo tem tudo isso e mais: +50 vídeos, destaques para bio e os 7 bônus.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao final">
+  <div class="container">
+    <h2 class="secao-titulo">Pronta para postar hoje?</h2>
+    <p>Vídeos prontos para divulgar sua podologia, a partir de R$10 (pagamento único). Escolha o pacote e receba o acesso por email e WhatsApp.</p>
+    <div class="final-botoes">
+      <a href="https://app.mivvo.com.br/checkout/01a11bf5-0ae1-7c48-9871-6f2b240386c5" class="btn" id="cta-final-basico" style="background:var(--branco);color:var(--preto)">BÁSICO — R$10</a>
+      <a href="https://app.mivvo.com.br/checkout/01a0e2f9-35b1-75de-b9b9-7f6c61cc8817" class="btn" id="cta-final-completo">COMPLETO — R$27,90</a>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-ver" id="sticky-ver"><a href="#planos">Ver pacotes — a partir de R$10</a></div>
+
+<footer>
+  <p style="margin-bottom:6px;"><a href="https://trafego6em7.com/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a> &nbsp;|&nbsp; <a href="https://trafego6em7.com/termos-de-uso/" target="_blank" rel="noopener">Termos de Uso</a></p>
+  <p>© 2026 — Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function toggleFaq(btn){const item=btn.closest('.faq-item');const aberto=item.classList.contains('aberto');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('aberto'));if(!aberto)item.classList.add('aberto');}
+
+// sticky "ver pacotes" some quando a secao de planos esta visivel
+(function(){
+  var sticky=document.getElementById('sticky-ver'), planos=document.getElementById('planos');
+  if(!sticky||!planos) return;
+  var shownScroll=false;
+  window.addEventListener('scroll',function(){ if(!shownScroll && window.scrollY>400){ shownScroll=true; } sticky.classList.toggle('on', shownScroll); },{passive:true});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) sticky.classList.remove('on'); }); },{threshold:0.2}).observe(planos);
+  }
+})();
+</script>
+
+<!-- TRACKING: eventos customizados (trackCustom), sem duplicar PageView/Purchase ja existentes.
+     Clique no botao != chegada confirmada ao checkout (dominio app.mivvo.com.br, sem pixel nosso la).
+     "chegada real ao checkout" e "compra aprovada" NAO sao medidos por este pixel. -->
+<script>
+function xfbq(ev,data){ try{ if(window.fbq) fbq('trackCustom', ev, data||{}); }catch(e){} }
+document.addEventListener('DOMContentLoaded', function(){
+  var heroBtn=document.getElementById('cta-hero'); if(heroBtn) heroBtn.addEventListener('click', function(){ xfbq('ClickHeroCTA'); });
+  ['cta-basico','cta-final-basico'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click', function(){ xfbq('ClickBasico',{plano:'10'}); }); });
+  ['cta-completo','cta-bonus','cta-final-completo'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click', function(){ xfbq('ClickCompleto',{plano:'27.90'}); }); });
+  var planos=document.getElementById('planos');
+  if(planos && 'IntersectionObserver' in window){
+    var fired=false;
+    new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting && !fired){ fired=true; xfbq('ViewPlans'); } }); },{threshold:0.3}).observe(planos);
+  }
+});
+</script>
+
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','28152688191049877');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=28152688191049877&ev=PageView&noscript=1"/></noscript>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+</body>
+</html>
