@@ -78,6 +78,19 @@ button{font:inherit}
 .plano-preco-tipo{font-size:11.5px;color:var(--cinza-texto)}
 .condicoes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
 .condicoes span{background:var(--cor-primaria-clara);color:var(--cor-primaria-hover);font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px}
+/* COMPLETO BONUS BOX */
+.completo-bonus-box{background:var(--cor-primaria-clara);border:1px solid var(--cor-primaria-media);border-radius:10px;padding:12px 14px}
+.completo-bonus-box p{font-size:11px;font-weight:800;color:var(--cor-primaria-hover);margin-bottom:7px;text-transform:uppercase;letter-spacing:.4px}
+.completo-bonus-box ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.completo-bonus-box ul li{font-size:12.5px;display:flex;gap:6px;align-items:flex-start;color:var(--preto)}
+.completo-bonus-box ul li::before{content:'✓';color:var(--cor-primaria);font-weight:800;flex-shrink:0}
+/* DEPOIMENTOS CAROUSEL */
+.depo-carousel{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.depo-track{display:flex;gap:16px;width:max-content;animation:depoScroll 26s linear infinite}
+.depo-carousel:hover .depo-track{animation-play-state:paused}
+.depo-track img{width:220px;flex-shrink:0;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+@media(max-width:620px){.depo-track img{width:170px}}
+@keyframes depoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* BONUS */
 .bonus-grupo{margin-bottom:22px}
 .bonus-grupo h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--cor-primaria);margin-bottom:10px;font-weight:800}
@@ -119,8 +132,9 @@ footer a{text-decoration:underline}
     <h1>Vídeos prontos para divulgar a sua podologia, sem precisar aparecer ou gravar</h1>
     <p class="center" style="margin-left:auto;margin-right:auto">Mascotes animados já editados, prontos pra postar no Instagram, TikTok e WhatsApp. Você baixa e publica — sem câmera, sem edição, sem precisar aparecer.</p>
     <div class="hero-video">
-      <video src="hero-podologa.mp4" muted loop playsinline preload="metadata" controls controlsList="nodownload nofullscreen noplaybackrate noremoteplayback" oncontextmenu="return false;"></video>
+      <video src="hero-podologa.mp4" poster="hero-poster.webp" muted loop playsinline preload="metadata" controls controlsList="nodownload nofullscreen noplaybackrate noremoteplayback" oncontextmenu="return false;"></video>
     </div>
+    <a href="#demos" class="btn-ghost" style="margin-bottom:16px">Ver mais exemplos</a>
     <p class="preco-badge">💰 Pacotes a partir de <b>R$10</b> • pagamento único</p>
     <a href="#planos" class="btn" id="cta-hero">VER PACOTES E PREÇOS</a>
     <p class="hero-rodape">Acesso enviado por email e WhatsApp após a confirmação do pagamento • garantia de 7 dias</p>
@@ -139,7 +153,7 @@ footer a{text-decoration:underline}
   </div>
 </section>
 
-<section class="secao">
+<section class="secao" id="demos">
   <div class="container">
     <h2 class="secao-titulo">Veja o que você vai <span class="destaque">publicar</span></h2>
     <p class="secao-sub">3 exemplos reais do pacote</p>
@@ -165,7 +179,7 @@ footer a{text-decoration:underline}
   <div class="container">
     <h2 class="secao-titulo">Como você <span class="destaque">recebe e usa</span></h2>
     <div class="passos">
-      <div class="passo"><div class="passo-num">1</div><div><h4>Escolha seu pacote</h4><p>Básico (R$10) ou Completo (R$27,90) — os dois são pagamento único.</p></div></div>
+      <div class="passo"><div class="passo-num">1</div><div><h4>Escolha seu pacote</h4><p>Escolha o plano que preferir.</p></div></div>
       <div class="passo"><div class="passo-num">2</div><div><h4>Receba o acesso</h4><p>Assim que o pagamento for confirmado, enviamos o link para o seu email e WhatsApp.</p></div></div>
       <div class="passo"><div class="passo-num">3</div><div><h4>Baixe e publique</h4><p>Os vídeos já vêm prontos. Basta baixar o arquivo e postar direto nas suas redes.</p></div></div>
     </div>
@@ -224,8 +238,19 @@ footer a{text-decoration:underline}
           <li>Tudo do Básico e mais</li>
           <li>+50 Vídeos de Objetos Falantes</li>
           <li>Destaques para Bio no Instagram</li>
-          <li><strong>7 bônus:</strong> Método Post que Atrai Clientes, Fórmula Instagram que Vende, Protocolo de Atendimento, Biblioteca de Respostas para WhatsApp, Calculadora de Preços e Lucro, Controle de Clientes e Retornos, Gerador de Orçamentos.</li>
         </ul>
+        <div class="completo-bonus-box">
+          <p>+ 7 bônus exclusivos inclusos</p>
+          <ul>
+            <li>Método Post que Atrai Clientes</li>
+            <li>Fórmula Instagram que Vende</li>
+            <li>Protocolo de Atendimento</li>
+            <li>Biblioteca de Respostas para WhatsApp</li>
+            <li>Calculadora de Preços e Lucro</li>
+            <li>Controle de Clientes e Retornos</li>
+            <li>Gerador de Orçamentos</li>
+          </ul>
+        </div>
         <div><div class="plano-preco">R$27,90</div><div class="plano-preco-tipo">Pagamento único</div></div>
         <a href="https://app.mivvo.com.br/checkout/01a0e2f9-35b1-75de-b9b9-7f6c61cc8817" class="btn" id="cta-completo">COMPRAR COMPLETO — R$27,90</a>
       </div>
@@ -243,11 +268,17 @@ footer a{text-decoration:underline}
   <div class="container">
     <h2 class="secao-titulo">O que <span class="destaque">comentam</span></h2>
     <p class="secao-sub">Simulações de conversa mostrando o tipo de retorno que os vídeos costumam gerar</p>
-    <div class="depo-grid">
-      <img src="depo-tb-1.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
-      <img src="depo-tb-2.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
-      <img src="depo-tb-3.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
-      <img src="depo-tb-4.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+    <div class="depo-carousel">
+      <div class="depo-track">
+        <img src="depo-new-1.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-2.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-3.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-4.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-1.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-2.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-3.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+        <img src="depo-new-4.webp" alt="Depoimento ilustrativo sobre os vídeos de podologia" loading="lazy">
+      </div>
     </div>
     <p class="depo-aviso">*Conversas ilustrativas (não são capturas de clientes reais), usadas aqui apenas para exemplificar o tipo de retorno que os vídeos costumam gerar.</p>
   </div>
